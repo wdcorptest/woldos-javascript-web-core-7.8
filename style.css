@@ -27,6 +27,9 @@ body {
     font-style: normal;
 }
 
+label {
+    color: #1B1C21;
+}
 input[type='radio'] {
     appearance: none;
 }
@@ -36,6 +39,10 @@ button {
     padding: 0;
     margin: 0;
     cursor: pointer;
+    transition: all 0.1s ease-in;
+}
+button:hover {
+    transform: scale(1.05);
 }
 a {
     font-family: TTLakes-Medium;
@@ -62,6 +69,7 @@ ul {
 .sidebar {
     position: fixed;
     overflow-y: auto;
+    scrollbar-width: none;
     width: 320px;
     height: 100vh;
     top: 0;
@@ -87,13 +95,32 @@ ul {
     gap: 16px;
 }
 .sidebar__navigation {
+    position: relative;
     padding-top: 24px;
+}
+.sidebar__navigation-link {
+    padding-block: 5px;
     padding-left: 24px;
+    display: flex;
+    align-items: center;
+}
+.sidebar__navigation-link:hover::before {
+    position: absolute;
+    content: '';
+    width: 4px;
+    height: 32px;
+    left: 0;
+    background-color: #41F6D7;
+    border-radius: 0 20px 20px 0;
+    color: #7E7E82;
+} 
+.sidebar__navigation-link:hover {
+    color:#7E7E82;
 }
 .sidebar__navigation-list {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 22px;
 }
 
 .sidebar__footer {
@@ -119,6 +146,6 @@ ul {
     color: #1B1C21;
     font-family: TTLakes-Medium;
 }
-.sidebar__language-box input:checked {
+.sidebar__language-box label:has(input:checked) {
     color: #7E7E82;
 }
