@@ -79,6 +79,7 @@ ul {
     gap: 268px;
     max-width: 320px;
     justify-content: space-between;
+    box-shadow: 20px 0 40px #0E185033
 }
 .sidebar__header, .sidebar__footer {
     flex-shrink: 0;
